@@ -12,10 +12,11 @@ gulp.task('sass', function () {
 });
 
 gulp.task('deploy', function () {
+
     var conn = ftp.create({
-        host: process.env.HOST,
-        user: process.env.USERNAME,
-        password: process.env.PASSWORD,
+        host: process.env.FTP_HOST,
+        user: process.env.FTP_USERNAME,
+        password: process.env.FTP_PASSWORD,
         parallel: 10
     });
 
