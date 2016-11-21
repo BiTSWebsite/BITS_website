@@ -3,6 +3,7 @@ var ftp = require('vinyl-ftp');
 var sass = require('gulp-sass');
 var git = require('gulp-git');
 var shell = require('gulp-shell');
+var watch = require('gulp-watch');
 
 
 gulp.task('sass', function () {
@@ -41,8 +42,8 @@ gulp.task('init-wp', function(){
 });
 
 
-gulp.task('run-wp', 
-   shell.task([ 
+gulp.task('run-wp',
+   shell.task([
       'cd VVV && vagrant up'
 ]));
 
@@ -57,4 +58,10 @@ gulp.task('deploy-vm', function() {
 
    return gulp.src('./themes/**/*')
        .pipe(gulp.dest('./VVV/www/wordpress-default/wp-content/themes'));
+});
+
+gulp.task('stream', function () {
+    return watch(['plugins/**/*.*', 'themes/**/*.*'], function() {
+      gulp.start('deploy-vm')
+    });
 });
