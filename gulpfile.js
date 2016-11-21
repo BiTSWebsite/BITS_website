@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var ftp = require('vinyl-ftp');
 var sass = require('gulp-sass');
 var git = require('gulp-git');
-var shell = require('gulp-shell')
+var shell = require('gulp-shell');
 
 
 gulp.task('sass', function () {
@@ -12,10 +12,14 @@ gulp.task('sass', function () {
 });
 
 gulp.task('deploy', function () {
+
+    console.log('**********************');
+    console.log(process.env.FTP_HOST);
+
     var conn = ftp.create({
-        host: process.env.HOST,
-        user: process.env.USERNAME,
-        password: process.env.PASSWORD,
+        host: process.env.FTP_HOST,
+        user: process.env.FTP_USERNAME,
+        password: process.env.FTP_PASSWORD,
         parallel: 10
     });
 
