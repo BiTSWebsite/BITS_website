@@ -50,3 +50,11 @@ gulp.task('stop-wp',
    shell.task([
       'cd VVV && vagrant halt'
 ]));
+
+gulp.task('deploy-vm', function() {
+   gulp.src('./plugins/**/*')
+       .pipe(gulp.dest('./VVV/www/wordpress-default/wp-content/plugins'));
+
+   return gulp.src('./themes/**/*')
+       .pipe(gulp.dest('./VVV/www/wordpress-default/wp-content/themes'));
+});
