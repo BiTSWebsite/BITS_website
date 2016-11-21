@@ -12,16 +12,18 @@ gulp.task('sass', function () {
 });
 
 gulp.task('deploy', function () {
-
-    console.log('**********************');
-    console.log(process.env.FTP_HOST);
-
     var conn = ftp.create({
         host: process.env.FTP_HOST,
         user: process.env.FTP_USERNAME,
         password: process.env.FTP_PASSWORD,
         parallel: 10
     });
+
+    gulp.src(['plugins/**/*'], {base: '.', buffer: false})
+        .pipe(conn.dest('/htdocs/wp-content'));
+
+    gulp.src(['themes/**/*'], {base: '.', buffer: false})
+        .pipe(conn.dest('/htdocs/wp-content'));
 
     return gulp.src(['build/css/main.css'], {base: '.', buffer: false})
         .pipe(conn.dest('/stylesheets'));
