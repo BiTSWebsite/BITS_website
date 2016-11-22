@@ -27,7 +27,7 @@ function wpmudev_create_post_type() {
 		'labels' => $labels,
 		'has_archive' => true,
  		'public' => true,
-		'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail','page-attributes' ),
+		'supports' => array( 'title' ),
 		'taxonomies' => array( 'post_tag', 'category' ),
 		'exclude_from_search' => false,
 		'capability_type' => 'post'
