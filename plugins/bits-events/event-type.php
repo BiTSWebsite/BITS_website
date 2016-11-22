@@ -4,6 +4,7 @@ Description: This plugin registers the 'event' post type for BITS.
 Version: 1.0
 License: GPLv2
 */
+include 'functions.php';
 
 function wpmudev_create_post_type() {
   // set up labels
@@ -41,6 +42,54 @@ function add_events_metaboxes() {
 }
 
 add_action( 'add_meta_boxes', 'add_events_metaboxes' );
+
+add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ */
+function cmb2_sample_metaboxes() {
+
+    // Start with an underscore to hide fields from custom fields list
+    $prefix = '_logistics_';
+
+    /**
+     * Initiate the metabox
+     */
+    $cmb = new_cmb2_box( array(
+        'id'            => 'logistics_metabox',
+        'title'         => __( 'Logistics', 'cmb2' ),
+        'object_types'  => array( 'event', ), // Post type
+        'context'       => 'side',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    // Regular text field
+    $cmb->add_field( array(
+        'name'       => __( 'Location', 'cmb2' ),
+        'desc'       => __( 'field description (optional)', 'cmb2' ),
+        'id'         => $prefix . 'location',
+        'type'       => 'text',
+        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+
+    // URL text field
+    $cmb->add_field( array(
+        'name' => __( 'When', 'cmb2' ),
+        'desc' => __( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'url',
+        'type' => 'text',
+        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+        // 'repeatable' => true,
+    ) );
+
+}
 
 // The Event Location Metabox
 function bits_events_location() {
