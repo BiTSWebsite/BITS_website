@@ -27,7 +27,7 @@ gulp.task('deploy', function () {
         .pipe(conn.dest('/htdocs/wp-content'));
 
     return gulp.src(['build/css/main.css'], {base: '.', buffer: false})
-        .pipe(conn.dest('/stylesheets'));
+        .pipe(conn.dest('/htdocs/wp-content/themes/bits_bcn/css'));
 });
 
 gulp.task('default', function () {
@@ -56,8 +56,11 @@ gulp.task('deploy-vm', function() {
    gulp.src('./plugins/**/*')
        .pipe(gulp.dest('./VVV/www/wordpress-default/wp-content/plugins'));
 
-   return gulp.src('./themes/**/*')
+   gulp.src('./themes/**/*')
        .pipe(gulp.dest('./VVV/www/wordpress-default/wp-content/themes'));
+
+    return gulp.src('./build/css/**/*')
+        .pipe(gulp.dest('./VVV/www/wordpress-default/wp-content/themes/bits_bcn/css'));
 });
 
 gulp.task('stream', function () {
