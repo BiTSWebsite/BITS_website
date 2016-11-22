@@ -18,9 +18,6 @@ get_header(); ?>
 					endwhile; else: ?>
 					<p>Sorry, the content of the page is under construction.</p>
 				<?php endif; ?>
-				<p>
-					<?php echo bloginfo('stylesheet_url')?>
-				</p>
 			</div>
 		</div>
 
