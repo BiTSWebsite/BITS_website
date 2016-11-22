@@ -2,3 +2,4 @@ node_modules/
 build/
 .idea/
 VVV/
+.DS_Store
