@@ -26,6 +26,9 @@ gulp.task('deploy', function () {
     gulp.src(['themes/**/*'], {base: '.', buffer: false})
         .pipe(conn.dest('/htdocs/wp-content'));
 
+    gulp.src(['single_page/**/*'], {base: '.', buffer: false})
+        .pipe(conn.dest('/htdocs'));
+
     return gulp.src(['build/css/main.css'], {base: 'build/css', buffer: false})
         .pipe(conn.dest('/htdocs/wp-content/themes/bits_bcn/css'));
 });
