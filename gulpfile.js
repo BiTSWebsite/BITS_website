@@ -29,7 +29,7 @@ gulp.task('deploy', function () {
     gulp.src(['single_page/**/*'], {base: '.', buffer: false})
         .pipe(conn.dest('/htdocs'));
 
-    gulp.src(['.htaccess'], {base: 'infrastructure', buffer: false})
+    gulp.src(['infrastructure/.htaccess'], {base: 'infrastructure', buffer: false})
         .pipe(conn.dest('/htdocs'));
 
     return gulp.src(['build/css/main.css'], {base: 'build/css', buffer: false})
