@@ -38,43 +38,50 @@ add_action( 'init', 'bits_event_create_post_type' );
 add_action( 'cmb2_admin_init', 'bits_event_metaboxes' );
 
 function bits_event_metaboxes() {
+	bits_event_featured_video_metabox();
+	bits_event_logistics_metabox();
+}
+
+function bits_event_featured_video_metabox() {
+	$cmb = new_cmb2_box( array(
+		'id' => 'video_on_vimeo',
+		'title' => 'Featured content',
+		'object_types' => array('bits_event'),
+		'context' => 'side'
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Vimeo video ID', 'cmb2' ),
+		'id'   => '_video_id',
+		'type' => 'text'
+	) );
+}
+
+function bits_event_logistics_metabox() {
     $prefix = '_logistics_';
 
-    /**
-     * Initiate the metabox
-     */
     $cmb = new_cmb2_box( array(
         'id'            => 'logistics_metabox',
         'title'         => __( 'Logistics', 'cmb2' ),
-        'object_types'  => array( 'bits_event', ), // Post type
+        'object_types'  => array( 'bits_event', ),
         'context'       => 'side',
         'priority'      => 'high',
-        'show_names'    => true, // Show field names on the left
-        // 'cmb_styles' => false, // false to disable the CMB stylesheet
-        // 'closed'     => true, // Keep the metabox closed by default
+        'show_names'    => true,
     ) );
 
-    // Regular text field
     $cmb->add_field( array(
         'name'       => __( 'Location', 'cmb2' ),
         'desc'       => __( 'Where the event will be', 'cmb2' ),
         'id'         => $prefix . 'location',
         'type'       => 'text',
-        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
+        'show_on_cb' => 'cmb2_hide_if_no_cats',
     ) );
 
-    // URL text field
     $cmb->add_field( array(
         'name' => __( 'Date', 'cmb2' ),
         'desc' => __( 'Date for the event', 'cmb2' ),
         'id'   => $prefix . 'date',
         'type' => 'text_date',
-        // 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-        // 'repeatable' => true,
     ) );
 }
 
