@@ -10,5 +10,16 @@
     width: 30px;
     margin: 1rem 0.75rem 0 0;
   }
+
+  .close-button {
+    color: $bitsYellow;
+    font-size: 1.25rem;
+    margin: 1rem 0.75rem 0 0;
+  }
+
+  &.reveal {
+    background-color: $darkGrey;
+    padding: 0;
+  }
 }
 
