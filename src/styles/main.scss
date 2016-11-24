@@ -1,4 +1,5 @@
-@import 'scss/foundation';
+@import '../../node_modules/foundation-sites/scss/foundation';
+@include foundation-everything();
 
 @import 'scss/variables';
 @import 'scss/typography';
@@ -6,3 +7,4 @@
 @import 'scss/events';
 @import 'scss/colours';
 @import 'scss/top-bar';
+

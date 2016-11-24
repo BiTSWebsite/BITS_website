@@ -14,4 +14,5 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <div class="contents">
+  <?php include 'navbar.php'; ?>
+  <div class="contents">
