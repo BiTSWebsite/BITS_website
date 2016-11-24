@@ -22,7 +22,7 @@
         </div>
         <div class="columns small-6">
             <div data-responsive-toggle="bits-menu" data-hide-for="medium">
-                <p class="close-button" data-toggle>Close</p>
+                <img class="hamburger" src="/wp-content/themes/bits_bcn/images/cross.svg" data-toggle>
             </div>
         </div>
     </div>
