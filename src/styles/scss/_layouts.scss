@@ -1,0 +1,21 @@
+.contents {
+  @extend .row;
+}
+
+.content-area {
+  @extend .medium-12, .large-8, .columns;
+}
+
+.contacts {
+  @extend .small-12, .columns;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
