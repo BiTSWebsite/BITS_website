@@ -27,8 +27,9 @@
         </div>
     </div>
     <div class="row">
-        <ul>
+        <ul class="menu-items">
             <li><a>First item</a></li>
+            <li><a>Second item</a></li>
         </ul>
     </div>
 </nav>
