@@ -8,8 +8,13 @@
   .hamburger {
     cursor: pointer;
     float: right;
-    width: 30px;
     margin: 1rem 0.75rem 0 0;
+    width: 40px;
+
+    @include breakpoint(medium down) {
+      width: 30px;
+
+    }
   }
 
   .close-button {
@@ -29,6 +34,10 @@
 
       &:last-of-type {
         border-bottom: none;
+      }
+
+      &:hover {
+        background-color: $lightGrey;
       }
 
       a {
