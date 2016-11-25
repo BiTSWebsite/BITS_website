@@ -83,6 +83,13 @@ function bits_event_logistics_metabox() {
         'id'   => $prefix . 'date',
         'type' => 'text_date',
     ) );
+
+		$cmb->add_field(array(
+        'name' => __( 'Time', 'cmb2' ),
+        'desc' => __( 'Time for the event', 'cmb2' ),
+        'id'   => $prefix . 'time',
+        'type' => 'text_time',
+    ) );
 }
 
 ?>
