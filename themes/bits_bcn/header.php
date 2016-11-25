@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title(); ?> | <?php bloginfo('name'); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen"/>
-    <link rel="stylesheet" href="/wp-content/themes/bits_bcn/css/main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/wp-content/themes/bits_bcn/css/main.min.css" type="text/css" media="screen" />
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />

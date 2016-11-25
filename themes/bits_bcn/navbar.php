@@ -27,9 +27,8 @@
         </div>
     </div>
     <div class="row">
-        <ul class="menu-items">
-            <li><a>First item</a></li>
-            <li><a>Second item</a></li>
-        </ul>
+        <?php wp_nav_menu(array('menu_class' => 'menu-items')); ?>
     </div>
 </nav>
+
+

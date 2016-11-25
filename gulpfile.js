@@ -4,11 +4,21 @@ var sass = require('gulp-sass');
 var git = require('gulp-git');
 var shell = require('gulp-shell');
 var watch = require('gulp-watch');
+var rename = require("gulp-rename");
+var cleanCSS = require('gulp-clean-css');
+var clean = require('gulp-clean');
 
+
+gulp.task('clean', function () {
+    return gulp.src('./build', {read: false})
+        .pipe(clean());
+});
 
 gulp.task('sass', function () {
     return gulp.src('./src/styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(cleanCSS())
         .pipe(gulp.dest('./build/css'));
 });
 
@@ -32,7 +42,7 @@ gulp.task('deploy', function () {
     gulp.src(['infrastructure/.htaccess'], {base: 'infrastructure', buffer: false})
         .pipe(conn.dest('/htdocs'));
 
-    return gulp.src(['build/css/main.css'], {base: 'build/css', buffer: false})
+    return gulp.src(['build/css/main.min.css'], {base: 'build/css', buffer: false})
         .pipe(conn.dest('/htdocs/wp-content/themes/bits_bcn/css'));
 });
 
@@ -40,13 +50,11 @@ gulp.task('default', function () {
     // place code for your default task here
 });
 
-
 gulp.task('init-wp', function(){
   git.clone('https://github.com/Varying-Vagrant-Vagrants/VVV.git', function (err) {
     if (err) throw err;
   });
 });
-
 
 gulp.task('run-wp',
    shell.task([
@@ -73,4 +81,11 @@ gulp.task('stream', function () {
     return watch(['plugins/**/*.*', 'themes/**/*.*'], function() {
       gulp.start('deploy-vm')
     });
+});
+
+gulp.task('minify-css', function() {
+    return gulp.src('./build/css/**/*')
+        .pipe(rename({suffix: '.min'}))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('./build/css/**/*'));
 });
