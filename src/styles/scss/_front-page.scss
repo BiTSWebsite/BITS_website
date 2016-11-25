@@ -4,8 +4,18 @@
     font-family: $openSansNormal;
     text-transform: uppercase;
     font-weight: 800;
+
+    a {
+      font-size: large;
+      font-weight: 800;
+      text-transform: none;
+    }
   }
 
+}
+
+.closing-paragraph {
+  text-align: center;
 }
 
 .front-teaser {
