@@ -1,3 +1,4 @@
+# Delete this section to make the homepage the wordpress homepage
 <IfModule mod_rewrite.c>
 RewriteEngine  on
 RewriteRule    "^$"  "/single_page/es/index.html" [PT]
@@ -14,3 +15,18 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+### Blocking Spammers Section ###
+
+# Stop protected folders from being narked. Also helps with spammers
+ErrorDocument 401 /401.html
+
+# Stop spam attack logins and comments
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteCond %{REQUEST_URI} .(wp-comments-post|wp-login)\.php*
+    RewriteCond %{HTTP_REFERER} !.*(bits.city|vu2052.swayne.1984.is).* [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^$
+    RewriteRule (.*) http://%{REMOTE_ADDR}/$ [R=301,L]
+</ifModule>
