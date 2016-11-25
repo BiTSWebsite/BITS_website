@@ -2,9 +2,11 @@
 @include foundation-everything();
 
 @import 'scss/variables';
+@import 'scss/colours';
 @import 'scss/typography';
 @import 'scss/layouts';
+@import 'scss/components';
+@import 'scss/front-page';
 @import 'scss/events';
-@import 'scss/colours';
 @import 'scss/top-bar';
 @import 'scss/bottom-bar';

@@ -1,0 +1,8 @@
+.cta {
+  @extend .button;
+  color: white;
+  background-color: $bitsRed;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+}

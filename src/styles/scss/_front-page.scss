@@ -1,0 +1,28 @@
+.front-page {
+
+  h1 {
+    font-family: $openSansNormal;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+}
+
+.front-teaser {
+  background-color: $darkGrey;
+  background-size: cover;
+  background-image: url('/wp-content/themes/bits_bcn/images/barcelona-highlight.jpg');
+
+  p {
+    font-style: italic;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 800;
+    font-size: x-large;
+    text-align: center;
+    margin: 0px 3.2rem 0px 3.2rem;
+    @media #{$medium-up} {
+      margin: 0px 16rem 0px 16rem;
+    }
+  }
+}
