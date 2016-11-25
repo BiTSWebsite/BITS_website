@@ -1,0 +1,18 @@
+.contacts {
+  text-align: center;
+}
+
+.contacticons {
+  padding: 0.3rem;
+
+  img {
+    width: 3rem;
+  }
+
+  &:hover, &:focus {
+    opacity: 0.7;
+  }
+}
+.footer {
+  padding: 0rem 0rem 3rem;
+}
