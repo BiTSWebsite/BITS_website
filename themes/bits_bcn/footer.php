@@ -3,8 +3,8 @@
         <div class="footer">
         <hr>
           <div class="contacts">
-            <!-- <a href="https://www.facebook.com/bitsbcn"><img src="<?php bloginfo('template_directory'); ?>/images/facebook-icon.svg" /></a> -->
-
+            <a class="contacticons" href="mailto:bitsbarcelona@gmail.com"><img src="<?php bloginfo('template_directory'); ?>/images/email-icon.svg" /></a>
+            <img class="dotdivider" src="<?php bloginfo('template_directory'); ?>/images/dot.svg">
             <a class="contacticons" href="https://www.facebook.com/bitsbcn"><img src="<?php bloginfo('template_directory'); ?>/images/facebook-icon.svg" /></a>
             <a class="contacticons" href="https://twitter.com/bits_bcn"><img src="<?php bloginfo('template_directory'); ?>/images/twitter-icon.svg" /></a>
           </div>
