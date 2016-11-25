@@ -90,6 +90,14 @@ function bits_event_logistics_metabox() {
         'id'   => $prefix . 'time',
         'type' => 'text_time',
     ) );
+
+		$cmb->add_field( array(
+        'name'       => __( 'Audience', 'cmb2' ),
+        'desc'       => __( 'Whether the event is public, private, etc. This field can be left empty.', 'cmb2' ),
+        'id'         => $prefix . 'audience',
+        'type'       => 'text',
+        'show_on_cb' => 'cmb2_hide_if_no_cats',
+    ) );
 }
 
 ?>
