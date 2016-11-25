@@ -42,7 +42,7 @@ gulp.task('deploy', function () {
     gulp.src(['infrastructure/.htaccess'], {base: 'infrastructure', buffer: false})
         .pipe(conn.dest('/htdocs'));
 
-    return gulp.src(['build/css/main.css'], {base: 'build/css', buffer: false})
+    return gulp.src(['build/css/main.min.css'], {base: 'build/css', buffer: false})
         .pipe(conn.dest('/htdocs/wp-content/themes/bits_bcn/css'));
 });
 
