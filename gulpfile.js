@@ -46,18 +46,6 @@ gulp.task('deploy', function () {
         .pipe(conn.dest('/htdocs/wp-content/themes/bits_bcn/css'));
 });
 
-gulp.task('phpunit', function() {
-
-    var options = {
-        debug:             true,
-        statusLine:        false,
-        configurationFile: './phpunit.xml'
-    };
-
-    gulp.src('phpunit.xml')
-        .pipe(phpunit('./vendor/phpunit/phpunit/phpunit', options));
-});
-
 gulp.task('default', function () {
     // place code for your default task here
 });
