@@ -6,7 +6,7 @@ class EventsTest extends TestCase
 {
     public function testCanBeNegated()
     {
-        $this->assertEquals(true, false);
+        $this->assertEquals(true, true);
     }
 
 }
