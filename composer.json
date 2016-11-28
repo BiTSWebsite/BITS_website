@@ -1,0 +1,6 @@
+{
+  "minimum-stability": "stable",
+  "require": {
+    "phpunit/phpunit": "^5.6"
+  }
+}

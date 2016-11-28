@@ -3,3 +3,4 @@ build/
 .idea/
 VVV/
 .DS_Store
+vendor/

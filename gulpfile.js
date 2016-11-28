@@ -7,7 +7,7 @@ var watch = require('gulp-watch');
 var rename = require("gulp-rename");
 var cleanCSS = require('gulp-clean-css');
 var clean = require('gulp-clean');
-
+var phpunit = require('gulp-phpunit');
 
 gulp.task('clean', function () {
     return gulp.src('./build', {read: false})
@@ -44,6 +44,18 @@ gulp.task('deploy', function () {
 
     return gulp.src(['build/css/main.min.css'], {base: 'build/css', buffer: false})
         .pipe(conn.dest('/htdocs/wp-content/themes/bits_bcn/css'));
+});
+
+gulp.task('phpunit', function() {
+
+    var options = {
+        debug:             true,
+        statusLine:        false,
+        configurationFile: './phpunit.xml'
+    };
+
+    gulp.src('phpunit.xml')
+        .pipe(phpunit('./vendor/phpunit/phpunit/phpunit', options));
 });
 
 gulp.task('default', function () {
