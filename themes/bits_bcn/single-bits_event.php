@@ -1,57 +1,27 @@
 <?php get_header(); ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		<?php
-		if ( have_posts() ) :
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php
-			endif;
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile;
-			the_posts_navigation();
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif; ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-	<!-- <h3><?php the_excerpt() ?><h3> -->
-
-	<!-- Where (new) <?php echo get_post_meta($post->ID, "_logistics_location", true); ?> -->
-	<!-- When (new) <?php echo date('F j, Y', strtotime(get_post_meta($post->ID, "_logistics_date", true))); ?> -->
-
-  <!-- <iframe src="https://player.vimeo.com/video/<?php echo get_post_meta($post->ID, "_video_id", true) ?>?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-
-		<div class="content-area">
-			<div class="titles">
-				<h1><?php the_title(); ?></h2>
-			</div>
-			<h3>Date:</h3>
-			<p><?php echo date('F j, Y', strtotime(get_post_meta($post->ID, "_logistics_date", true))); ?></p>
-      <h3>Time:</h3>
-  		<p><?php echo date('h:ia', strtotime(get_post_meta($post->ID, "_logistics_time", true))) ?></p>
-      <?php if (!empty(trim(get_post_meta($post->ID, "_logistics_audience", true)))): ?>
-        <h3>Audience:</h3>
-  		  <p><?php echo get_post_meta($post->ID, "_logistics_audience", true); ?></p>
-      <?php endif ?>
-      <h3>Venue:</h3>
-		  <p><?php echo get_post_meta($post->ID, "_logistics_location", true); ?></p>
-			<h3>Summary:</h3>
-			<?php the_excerpt() ?>
-      <?php if (!empty(trim(get_post_meta($post->ID, "_video_id", true)))): ?>
-        <p><iframe src="https://player.vimeo.com/video/<?php echo get_post_meta($post->ID, "_video_id", true) ?>?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
-      <?php endif ?>
-			<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
-			<hr>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		<div class="titles">
+			<h1><?php the_title(); ?></h2>
 		</div>
-	<?php get_footer(); ?>
+		<h3>Date:</h3>
+		<p><?php echo date('F j, Y', strtotime(get_post_meta($post->ID, "_logistics_date", true))); ?></p>
+	  <h3>Time:</h3>
+		<p><?php echo date('h:ia', strtotime(get_post_meta($post->ID, "_logistics_time", true))) ?></p>
+    <?php if (!empty(trim(get_post_meta($post->ID, "_logistics_audience", true)))): ?>
+      <h3>Audience:</h3>
+	  <p><?php echo get_post_meta($post->ID, "_logistics_audience", true); ?></p>
+    <?php endif ?>
+    <h3>Venue:</h3>
+	  <p><?php echo get_post_meta($post->ID, "_logistics_location", true); ?></p>
+		<h3>Summary:</h3>
+		<?php the_excerpt() ?>
+	  <?php if (!empty(trim(get_post_meta($post->ID, "_video_id", true)))): ?>
+        <p><iframe src="https://player.vimeo.com/video/<?php echo get_post_meta($post->ID, "_video_id", true) ?>?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+    <?php endif ?>
+		<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
