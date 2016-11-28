@@ -4,6 +4,8 @@
     font-family: $openSansNormal;
     text-transform: uppercase;
     font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
     a {
       font-size: large;
@@ -21,7 +23,9 @@
 .front-teaser {
   background-color: $darkGrey;
   background-size: cover;
-  background-image: url('/wp-content/themes/bits_bcn/images/barcelona-highlight.jpg');
+  background-image: url('/wp-content/themes/bits_bcn/images/barcelona-skyline.png');
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   p {
     font-style: italic;
@@ -30,9 +34,11 @@
     font-weight: 800;
     font-size: x-large;
     text-align: center;
-    margin: 0px 3.2rem 0px 3.2rem;
+    margin-left: 3.2rem;
+    margin-right: 3.2rem;
     @media #{$medium-up} {
-      margin: 0px 16rem 0px 16rem;
+      margin-left: 16rem;
+      margin-right: 16rem;
     }
   }
 }
