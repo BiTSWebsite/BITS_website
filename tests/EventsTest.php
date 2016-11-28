@@ -1,8 +1,6 @@
 <?php
-use /** @noinspection PhpUndefinedNamespaceInspection */
-    PHPUnit\Framework\TestCase;
 
-class EventsTest extends TestCase
+class EventsTest extends PHPUnit_Framework_TestCase
 {
     public function testCanBeNegated()
     {
