@@ -7,7 +7,7 @@
       <p>
         Posted on <?php echo date('jS F Y', strtotime(get_post_field('post_date', $post->ID))); ?>
 				<?php if (!empty(trim(get_post_meta($post->ID, "_article_author", true)))): ?>
-		      , by <?php echo get_post_meta($post->ID, "_article_author", true); ?>
+		      , by <?php echo get_post_meta($post->ID, "_publication_info_article_author", true); ?>
 		    <?php endif ?>
       </p>
     </div>

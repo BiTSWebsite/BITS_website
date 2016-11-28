@@ -56,15 +56,15 @@ function bits_article_publication_info_metabox() {
 	$cmb->add_field( array(
 		'name' => __( 'Original author', 'cmb2' ),
 		'desc' => __( 'Who wrote this article. This field can be left empty', 'cmb2' ),
-		'id'   => '_article_author',
+		'id'   => $prefix . 'article_author',
 		'type' => 'text'
 	) );
 
 	$cmb->add_field( array(
-		'name' => __( 'Featued article', 'cmb2' ),
+		'name' => __( 'Featured article', 'cmb2' ),
 		'desc' => __( 'Display this article in the homepage', 'cmb2' ),
-		'id'   => '_featured_article',
-		'type' => 'text'
+		'id'   => $prefix . 'featured_article',
+		'type' => 'checkbox'
 	) );
 }
 
