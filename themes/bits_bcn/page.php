@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Standard
+ * Template Name: page
  *
  * @package Bits
  */
@@ -12,18 +12,12 @@ get_header(); ?>
 
 		<div class="row">
 			<div class="small-12 columns">
-
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-					the_content();
-					endwhile; else: ?>
-					<p>Sorry, the content of the page is under construction.</p>
-				<?php endif; ?>
+				<h1><?php echo get_post_field('post_title', $post->ID); ?></h1>
+				<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
 			</div>
 		</div>
 
-
 	</main><!-- .site-main -->
-
 </div><!-- .content-area -->
 
 <?php get_sidebar(); ?>
