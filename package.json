@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "escape-string-regexp": "^1.0.5",
     "foundation-sites": "^6.2.4",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
