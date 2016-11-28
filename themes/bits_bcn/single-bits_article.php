@@ -8,7 +8,9 @@
         Posted on <?php echo get_post_field('post_date', $post->ID); ?>
       </p>
     </div>
-		<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
+		<div class="article-content">
+			<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>			
+		</div>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 

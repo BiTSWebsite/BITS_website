@@ -34,7 +34,7 @@
 
 		<div class="content-area">
 			<div class="titles">
-				<h1><?php the_title(); ?></h2>				
+				<h1><?php the_title(); ?></h2>
 			</div>
 			<h3>Date:</h3>
 			<p><?php echo date('F j, Y', strtotime(get_post_meta($post->ID, "_logistics_date", true))); ?></p>
@@ -51,9 +51,7 @@
       <?php if (!empty(trim(get_post_meta($post->ID, "_video_id", true)))): ?>
         <p><iframe src="https://player.vimeo.com/video/<?php echo get_post_meta($post->ID, "_video_id", true) ?>?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
       <?php endif ?>
-      <p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+			<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
 			<hr>
 		</div>
 	<?php get_footer(); ?>
