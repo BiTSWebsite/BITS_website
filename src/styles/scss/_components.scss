@@ -5,4 +5,10 @@
   font-weight: 700;
   text-align: center;
   text-transform: none;
+  &:hover {
+    background-color: $bitsYellow;
+  }
+  &:focus {
+    background-color: $bitsYellow;
+  }
 }

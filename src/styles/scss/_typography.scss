@@ -26,4 +26,10 @@ a {
   color: $bitsRed;
   font-weight: 700;
   text-decoration: underline;
+  &:hover {
+    color: $bitsYellow;
+  }
+  &:focus {
+    color: $bitsYellow;
+  }
 }
