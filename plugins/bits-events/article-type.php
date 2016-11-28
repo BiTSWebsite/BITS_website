@@ -37,5 +37,35 @@ function bits_article_create_post_type() {
 	);
 }
 add_action( 'init', 'bits_article_create_post_type' );
+add_action( 'cmb2_admin_init', 'bits_article_metaboxes' );
+
+function bits_article_metaboxes() {
+	bits_article_publication_info_metabox();
+}
+
+function bits_article_publication_info_metabox() {
+	$prefix = '_publication_info_';
+
+	$cmb = new_cmb2_box( array(
+		'id' => 'publication_info',
+		'title' => 'Article publication information',
+		'object_types' => array('bits_article'),
+		'context' => 'side'
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Original author', 'cmb2' ),
+		'desc' => __( 'Who wrote this article. This field can be left empty', 'cmb2' ),
+		'id'   => '_article_author',
+		'type' => 'text'
+	) );
+
+	$cmb->add_field( array(
+		'name' => __( 'Featued article', 'cmb2' ),
+		'desc' => __( 'Display this article in the homepage', 'cmb2' ),
+		'id'   => '_featured_article',
+		'type' => 'text'
+	) );
+}
 
 ?>
