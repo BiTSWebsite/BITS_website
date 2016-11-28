@@ -33,7 +33,9 @@
   <!-- <iframe src="https://player.vimeo.com/video/<?php echo get_post_meta($post->ID, "_video_id", true) ?>?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 
 		<div class="content-area">
-			<h1 class="titles"><?php the_title(); ?></h2>
+			<div class="titles">
+				<h1><?php the_title(); ?></h2>				
+			</div>
 			<h3>Date:</h3>
 			<p><?php echo date('F j, Y', strtotime(get_post_meta($post->ID, "_logistics_date", true))); ?></p>
       <h3>Time:</h3>
