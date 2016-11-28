@@ -39,4 +39,4 @@ ErrorDocument 401 /401.html
     RewriteCond %{HTTP_REFERER} !.*(bits.city|vu2052.swayne.1984.is).* [OR]
     RewriteCond %{HTTP_USER_AGENT} ^$
     RewriteRule (.*) http://%{REMOTE_ADDR}/$ [R=301,L]
-</ifModule>
+</IfModule>
