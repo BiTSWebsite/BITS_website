@@ -1,4 +1,4 @@
-  <?php get_header(); ?>
+<?php get_header(); ?>
   <?php get_template_part( 'front', 'teaser' ); ?>
 
 	<div id="primary" class="content-area">
