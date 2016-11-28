@@ -26,10 +26,13 @@ function bits_event_create_post_type() {
 		'labels' => $labels,
 		'has_archive' => true,
  		'public' => true,
-		'supports' => array( 'title', 'excerpt' ),
+		'supports' => array( 'title', 'excerpt', 'editor' ),
 		'taxonomies' => array( 'post_tag', 'category' ),
 		'exclude_from_search' => false,
-		'capability_type' => 'post'
+		'capability_type' => 'post',
+		'rewrite' => array(
+        'slug' => 'events'
+      )
 		)
 	);
 }
