@@ -1,8 +1,11 @@
 <?php
 
 function group_events_by_year($events) {
-    return $array = [
-        "2017" => [$events[0]],
-        "2016" => [],
-    ];
+
+    $events_grouped_by_year = [];
+
+    foreach ($events as $event) {
+        $events_grouped_by_year[date_format($event->getDate(), "Y")] = [$event];
+    }
+    return $events_grouped_by_year;
 }
