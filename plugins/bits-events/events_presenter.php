@@ -2,6 +2,10 @@
 
 function group_events_by_year($events) {
 
+    usort($events, function($eventA, $eventB) {
+        return $eventA->getDate() < $eventB->getDate();
+    });
+
     $events_grouped_by_year = [];
 
     foreach ($events as $event) {
