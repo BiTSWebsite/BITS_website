@@ -30,6 +30,7 @@ function bits_event_create_post_type() {
 		'taxonomies' => array( 'post_tag', 'category' ),
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-calendar',
 		'rewrite' => array(
         'slug' => 'events'
       )

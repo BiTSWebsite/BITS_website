@@ -30,6 +30,7 @@ function bits_article_create_post_type() {
 		'taxonomies' => array( 'post_tag', 'category' ),
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-media-document',
     'rewrite' => array(
         'slug' => 'articles'
       )
