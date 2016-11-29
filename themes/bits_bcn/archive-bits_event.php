@@ -15,6 +15,7 @@ get_header(); ?>
             echo $year;
             foreach ($events as $event) {
                 echo $event->getTitle();
+                echo $event->getExcerpt();
             }
         }; ?>
     </main><!-- .site-main -->

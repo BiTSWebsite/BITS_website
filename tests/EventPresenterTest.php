@@ -4,22 +4,25 @@ require_once __DIR__ . '/../plugins/bits-events/event.php';
 
 class EventPresenterTest extends PHPUnit_Framework_TestCase
 {
+    var $firstEvent, $secondEvent;
+
+    public function setUp() {
+        $this->firstEvent = new Event("Fancy", date_create("1994-03-01"), 'excerpt');
+        $this->secondEvent = new Event("Fancy", date_create("1994-04-01"), 'excerpt');
+    }
+
     public function testCanGroupAnEventByYear()
     {
-        $firstEvent = new Event("Fancy", date_create("1994-03-01"));
-        $events_grouped_by_year = group_events_by_year([$firstEvent]);
+        $events_grouped_by_year = group_events_by_year([$this->firstEvent]);
 
         $this->assertNotEmpty($events_grouped_by_year);
         $this->assertArrayHasKey("1994", $events_grouped_by_year);
-        $this->assertEquals($events_grouped_by_year['1994'][0], $firstEvent);
+        $this->assertEquals($events_grouped_by_year['1994'][0], $this->firstEvent);
     }
 
     public function testCanGroupMultipleEventsInTheSameYear()
     {
-        $firstEvent = new Event("Fancy", date_create("1994-03-01"));
-        $secondEvent = new Event("Fancy", date_create("1994-04-01"));
-
-        $events_grouped_by_year = group_events_by_year([$firstEvent, $secondEvent]);
+        $events_grouped_by_year = group_events_by_year([$this->firstEvent, $this->secondEvent]);
 
         $this->assertArrayHasKey("1994", $events_grouped_by_year);
 
@@ -28,9 +31,9 @@ class EventPresenterTest extends PHPUnit_Framework_TestCase
     }
 
     public function testYearsAreSortedInDescendingOrder() {
-        $firstEvent = new Event("Fancy", date_create("1998-03-01"));
-        $secondEvent = new Event("Less Fancy", date_create("1994-03-01"));
-        $thirdEvent = new Event("Not Fancy", date_create("1999-03-01"));
+        $firstEvent = new Event("Fancy", date_create("1998-03-01"), 'excerpt');
+        $secondEvent = new Event("Less Fancy", date_create("1994-03-01"), 'excerpt');
+        $thirdEvent = new Event("Not Fancy", date_create("1999-03-01"), 'excerpt');
 
         $events_grouped_by_year = group_events_by_year([$firstEvent, $secondEvent, $thirdEvent]);
         $this->assertEquals($events_grouped_by_year, ["1999" => [$thirdEvent],
@@ -38,12 +41,10 @@ class EventPresenterTest extends PHPUnit_Framework_TestCase
     }
 
     public function testYearsAreGroupedAndSortedBothInTheSameYearAndDescendingOrder() {
-        $firstEvent = new Event("Fancy", date_create("1998-03-01"));
-        $secondEvent = new Event("Less Fancy", date_create("1998-03-03"));
-        $thirdEvent = new Event("Not Fancy", date_create("1998-03-02"));
+        $thirdEvent = new Event("Not Fancy", date_create("1994-02-02"), 'excerpt');
 
-        $events_grouped_by_year = group_events_by_year([$firstEvent, $secondEvent, $thirdEvent]);
+        $events_grouped_by_year = group_events_by_year([$this->firstEvent, $this->secondEvent, $thirdEvent]);
 
-        $this->assertEquals($events_grouped_by_year, ["1998" => [$secondEvent, $thirdEvent, $firstEvent]]);
+        $this->assertEquals($events_grouped_by_year, ["1994" => [$this->secondEvent, $this->firstEvent, $thirdEvent]]);
     }
 }

@@ -1,7 +1,11 @@
 <?php
 
 function retrieveAllEvents() {
-    return [new Event('Fancy', date_create("2016-12-1")),
-        new Event('Super fancy', date_create("2016-12-3")),
-        new Event('Superduper fancy', date_create("2017-12-3"))];
+    $wp_events = get_posts(['post_type' => 'bits_event']);
+
+    return array_map(function ($wp_event) {
+        return new Event(get_the_title($wp_event),
+            date_create(get_post_meta($wp_event->ID, "_logistics_date", true)),
+            get_the_excerpt($wp_event));
+    }, $wp_events);
 }
