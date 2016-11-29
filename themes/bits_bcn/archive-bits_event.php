@@ -11,7 +11,12 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
         <h1>All events</h1>
-
+        <?php foreach (group_events_by_year() as $year => $events) {
+            echo $year;
+            foreach ($events as $event) {
+                echo $event->getTitle();
+            }
+        }; ?>
     </main><!-- .site-main -->
 </div><!-- .content-area -->
 
