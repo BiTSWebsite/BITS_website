@@ -13,7 +13,7 @@ get_header(); ?>
         <h1 class="page-title screen-reader-text">Events</h1>
         <hr class="full-width">
         <?php foreach (group_events_by_year(retrieveAllEvents()) as $year => $events) {?>
-            <h4><?php echo $year;?></h4>
+            <h4 class="event-year"><?php echo $year;?></h4>
             <?php
             foreach ($events as $event) {
                 ?>
