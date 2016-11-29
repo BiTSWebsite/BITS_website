@@ -37,4 +37,13 @@ class EventPresenterTest extends PHPUnit_Framework_TestCase
             "1998" => [$firstEvent],  "1994" => [$secondEvent]]);
     }
 
+    public function testYearsAreGroupedAndSortedBothInTheSameYearAndDescendingOrder() {
+        $firstEvent = new Event("Fancy", date_create("1998-03-01"));
+        $secondEvent = new Event("Less Fancy", date_create("1998-03-03"));
+        $thirdEvent = new Event("Not Fancy", date_create("1998-03-02"));
+
+        $events_grouped_by_year = group_events_by_year([$firstEvent, $secondEvent, $thirdEvent]);
+
+        $this->assertEquals($events_grouped_by_year, ["1998" => [$secondEvent, $thirdEvent, $firstEvent]]);
+    }
 }
