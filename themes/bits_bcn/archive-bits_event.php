@@ -12,11 +12,24 @@ get_header(); ?>
         <a class="navigation-link" href="/">Go to Home</a>
         <h1 class="page-title screen-reader-text">Events</h1>
         <hr class="full-width">
-        <?php foreach (group_events_by_year(retrieveAllEvents()) as $year => $events) {
-            echo $year;
+        <?php foreach (group_events_by_year(retrieveAllEvents()) as $year => $events) {?>
+            <h4><?php echo $year;?></h4>
+            <?php
             foreach ($events as $event) {
-                echo $event->getTitle();
-                echo $event->getExcerpt();
+                ?>
+                <div class="row">
+                    <div class="columns small-12">
+                        <div class="event-date">
+                            <span class="event-day">01</span>
+                            <span class="event-month">Dec</span>
+                        </div>
+                        <div class="event">
+                            <a class="event-title" href="#"><?php echo $event->getTitle();?></a>
+                            <p><?php echo $event->getExcerpt(); ?></p>
+                        </div>
+                    </div>
+                </div>
+                <?php
             }
         }; ?>
     </main><!-- .site-main -->
