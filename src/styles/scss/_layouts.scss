@@ -14,4 +14,9 @@ hr {
   margin: 3rem auto;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+  &.full-width {
+    margin: 1rem auto;
+    width: 100%;
+  }
 }

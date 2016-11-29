@@ -14,3 +14,18 @@
     background-color: $bitsYellow;
   }
 }
+
+.navigation-link  {
+  display: block;
+  margin-top: 1rem;
+
+  &:before {
+    background-image: url('/wp-content/themes/bits_bcn/images/right-chevron.svg');
+    content: '';
+    background-size: 0.8rem 0.8rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}

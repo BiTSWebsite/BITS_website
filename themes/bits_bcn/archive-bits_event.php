@@ -9,8 +9,9 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
-        <h1>All events</h1>
+        <a class="navigation-link" href="/">Go to Home</a>
+        <h1 class="page-title screen-reader-text">Events</h1>
+        <hr class="full-width">
         <?php foreach (group_events_by_year(retrieveAllEvents()) as $year => $events) {
             echo $year;
             foreach ($events as $event) {

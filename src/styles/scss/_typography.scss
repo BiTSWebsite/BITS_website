@@ -3,8 +3,10 @@ body {
 }
 
 h1 {
+  font-family: $openSansNormal;
+  text-transform: uppercase;
   font-weight: 800;
-
+  margin: 1rem 0;
 }
 
 h2 {
