@@ -8,12 +8,14 @@ class Article {
   var $publish_date;
   var $author;
   var $content;
+  var $is_featured_article;
 
-  function __construct($article_title, $article_publish_date, $article_author, $article_content) {
+  function __construct($article_title, $article_publish_date, $article_author, $article_content, $article_is_featured) {
     $this->title = $article_title;
     $this->publish_date = $article_publish_date;
     $this->author = $article_author;
     $this->content = $article_content;
+    $this->is_featured_article = $article_is_featured;
   }
 
   function get_title() {
@@ -26,6 +28,10 @@ class Article {
 
   function get_author() {
     return $this->author;
+  }
+
+  function is_featured() {
+    return $this->is_featured_article;
   }
 }
 ?>
