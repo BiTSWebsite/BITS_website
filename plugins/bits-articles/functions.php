@@ -1,3 +1,5 @@
+<?php require_once  __DIR__ . '/class-lib.php'; ?>
+
 <?php
 /**
  * Get the bootstrap!
@@ -46,4 +48,14 @@ if ( ! function_exists( 'get_featured_articles' ) ) :
   }
 
 endif;
+
+if ( ! function_exists( 'to_article' ) ) :
+
+  function to_article($post) {
+    return new Article($post->post_title, $post->post_date, $post->__get(BITS_ARTICLE_INFO_PREFIX . BITS_ARTICLE_AUTHOR_FIELD), $post->post_content);
+  }
+
+endif;
+
+
 ?>

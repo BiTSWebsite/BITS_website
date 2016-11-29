@@ -45,7 +45,7 @@ function bits_article_metaboxes() {
 }
 
 function bits_article_publication_info_metabox() {
-	$prefix = '_publication_info_';
+	$prefix = BITS_ARTICLE_INFO_PREFIX;
 
 	$cmb = new_cmb2_box( array(
 		'id' => 'publication_info',
@@ -57,14 +57,14 @@ function bits_article_publication_info_metabox() {
 	$cmb->add_field( array(
 		'name' => __( 'Original author', 'cmb2' ),
 		'desc' => __( 'Who wrote this article. This field can be left empty', 'cmb2' ),
-		'id'   => $prefix . 'article_author',
+		'id'   => $prefix . BITS_ARTICLE_AUTHOR_FIELD,
 		'type' => 'text'
 	) );
 
 	$cmb->add_field( array(
 		'name' => __( 'Featured article', 'cmb2' ),
 		'desc' => __( 'Display this article in the homepage', 'cmb2' ),
-		'id'   => $prefix . 'featured_article',
+		'id'   => $prefix . BITS_ARTICLE_IS_FEATURED_ARTICLE_FIELD,
 		'type' => 'checkbox'
 	) );
 }
