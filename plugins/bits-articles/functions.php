@@ -1,6 +1,7 @@
 <?php
-require_once  __DIR__ . '/class-lib.php';
-require_once  __DIR__ . '/model-mappings.php';
+require_once  __DIR__ . '/article.php';
+require_once  __DIR__ . '/mapping-functions.php';
+require_once  __DIR__ . '/presentation-functions.php';
 
 /**
  * Get the bootstrap!

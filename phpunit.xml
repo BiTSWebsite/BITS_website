@@ -24,7 +24,8 @@
         verbose="false">
     <testsuites>
         <testsuite name="BITS tests">
-            <directory>tests</directory>
+            <directory>./tests</directory>
         </testsuite>
+        
     </testsuites>
 </phpunit>
