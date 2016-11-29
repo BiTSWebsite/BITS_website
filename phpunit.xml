@@ -23,8 +23,8 @@
         timeoutForLargeTests="60"
         verbose="false">
     <testsuites>
-        <testsuite name="My Test Suite">
-            <file>./tests/EventPresenterTest.php</file>
+        <testsuite name="BITS tests">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
