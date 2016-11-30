@@ -19,13 +19,7 @@ endif;
 if ( ! function_exists( 'to_article_list' ) ) :
 
   function to_article_list($posts) {
-    $new_posts = array();
-
-    foreach ($posts as $post) {
-      array_push($new_posts, to_article($post));
-    }
-
-    return $new_posts;
+    return array_map('to_article', $posts);;
   }
 
 endif;
