@@ -24,7 +24,8 @@ get_header(); ?>
                             <span class="event-month"><?php echo $event->getMonth();?></span>
                         </div>
                         <div class="event">
-                            <a class="event-title" href="#"><?php echo $event->getTitle();?></a>
+                            <a class="event-title" href="<?php echo $event->getPermalink();?>">
+                                <?php echo $event->getTitle();?></a>
                             <p><?php echo $event->getExcerpt(); ?></p>
                         </div>
                     </div>

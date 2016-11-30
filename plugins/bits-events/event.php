@@ -1,22 +1,27 @@
 <?php
 
-class Event {
+class Event
+{
     var $title;
     var $date;
     var $excerpt;
+    var $permalink;
 
-    function __construct($title, $date, $excerpt)
+    function __construct($title, $date, $excerpt, $permalink)
     {
         $this->title = $title;
         $this->date = $date;
         $this->excerpt = $excerpt;
+        $this->permalink = $permalink;
     }
 
-    function getTitle() {
+    function getTitle()
+    {
         return $this->title;
     }
 
-    function getDate() {
+    function getDate()
+    {
         return $this->date;
     }
 
@@ -25,11 +30,18 @@ class Event {
         return $this->excerpt;
     }
 
-    function getDay() {
+    function getDay()
+    {
         return $this->date->format('d');
     }
 
-    function getMonth() {
+    function getMonth()
+    {
         return $this->date->format('M');
+    }
+
+    function getPermalink()
+    {
+        return $this->permalink;
     }
 }
