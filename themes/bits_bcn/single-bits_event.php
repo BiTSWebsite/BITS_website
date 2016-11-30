@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+		<a class="navigation-link" href="<?php echo get_post_type_archive_link('bits_event') ?>">Go to Events</a>
 		<div class="titles">
 			<h1><?php the_title(); ?></h1>
 		</div>
