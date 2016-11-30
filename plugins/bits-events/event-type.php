@@ -47,6 +47,8 @@ function bits_event_metaboxes() {
 }
 
 function bits_event_featured_video_metabox() {
+	$prefix = BITS_EVENT_FEATURED_CONTENT_PREFIX;
+
 	$cmb = new_cmb2_box( array(
 		'id' => 'video_on_vimeo',
 		'title' => 'Featured content',
@@ -56,13 +58,26 @@ function bits_event_featured_video_metabox() {
 
 	$cmb->add_field( array(
 		'name' => __( 'Vimeo video ID', 'cmb2' ),
-		'id'   => '_video_id',
+		'id'   => $prefix . BITS_EVENT_FEATURED_VIDEO,
 		'type' => 'text'
 	) );
+
+	$cmb->add_field( array(
+    'name'    => __( 'Featured image', 'cmb2' ),
+    'desc'    => 'Upload an image or choose from the media gallery.',
+    'id'      => $prefix . BITS_EVENT_FEATURED_IMAGE,
+    'type'    => 'file',
+    'options' => array(
+        'url' => false,
+    ),
+    'text'    => array(
+        'add_upload_file_text' => 'Add Image'
+    ),
+) );
 }
 
 function bits_event_logistics_metabox() {
-    $prefix = '_logistics_';
+    $prefix = BITS_EVENT_LOGISTICS_PREFIX;
 
     $cmb = new_cmb2_box( array(
         'id'            => 'logistics_metabox',
@@ -76,7 +91,7 @@ function bits_event_logistics_metabox() {
     $cmb->add_field( array(
         'name'       => __( 'Location', 'cmb2' ),
         'desc'       => __( 'Where the event will be', 'cmb2' ),
-        'id'         => $prefix . 'location',
+        'id'         => $prefix . BITS_EVENT_LOCATION,
         'type'       => 'text',
         'show_on_cb' => 'cmb2_hide_if_no_cats',
     ) );
@@ -84,21 +99,21 @@ function bits_event_logistics_metabox() {
     $cmb->add_field( array(
         'name' => __( 'Date', 'cmb2' ),
         'desc' => __( 'Date for the event', 'cmb2' ),
-        'id'   => $prefix . 'date',
+        'id'   => $prefix . BITS_EVENT_DATE,
         'type' => 'text_date',
     ) );
 
 		$cmb->add_field(array(
         'name' => __( 'Time', 'cmb2' ),
         'desc' => __( 'Time for the event', 'cmb2' ),
-        'id'   => $prefix . 'time',
+        'id'   => $prefix . BITS_EVENT_TIME,
         'type' => 'text_time',
     ) );
 
 		$cmb->add_field( array(
         'name'       => __( 'Audience', 'cmb2' ),
         'desc'       => __( 'Whether the event is public, private, etc. This field can be left empty.', 'cmb2' ),
-        'id'         => $prefix . 'audience',
+        'id'         => $prefix . BITS_EVENT_AUDIENCE,
         'type'       => 'text',
         'show_on_cb' => 'cmb2_hide_if_no_cats',
     ) );

@@ -2,11 +2,5 @@
 
 function retrieveAllEvents() {
     $wp_events = get_posts(['post_type' => 'bits_event']);
-
-    return array_map(function ($wp_event) {
-        return new Event(get_the_title($wp_event),
-            date_create(get_post_meta($wp_event->ID, "_logistics_date", true)),
-            get_the_excerpt($wp_event),
-            get_permalink($wp_event));
-    }, $wp_events);
+    return array_map('to_event', $wp_events);
 }
