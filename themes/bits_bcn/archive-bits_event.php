@@ -20,8 +20,8 @@ get_header(); ?>
                 <div class="row">
                     <div class="columns small-12">
                         <div class="event-date">
-                            <span class="event-day">01</span>
-                            <span class="event-month">Dec</span>
+                            <span class="event-day"><?php echo $event->getDay();?></span>
+                            <span class="event-month"><?php echo $event->getMonth();?></span>
                         </div>
                         <div class="event">
                             <a class="event-title" href="#"><?php echo $event->getTitle();?></a>

@@ -24,4 +24,12 @@ class Event {
     {
         return $this->excerpt;
     }
+
+    function getDay() {
+        return $this->date->format('d');
+    }
+
+    function getMonth() {
+        return $this->date->format('M');
+    }
 }
