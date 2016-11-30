@@ -1,5 +1,5 @@
   <?php get_header('front-page'); ?>
-  
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main front-page" role="main">
 		<h1>Top articles</h1>
@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor purus lacu
 Nulla facilisi. Duis eget quam libero. Sed egestas purus eget vulputate euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis leo sit amet urna euismod, at faucibus sapien laoreet. Cras consectetur sem velit, ut convallis neque vestibulum sit amet. Sed efficitur hendrerit cursus. Vivamus lobortis urna nec nibh consectetur, ut tempor nisi elementum. Ut eget ante quis nisl dictum cursus blandit at dui. Donec lectus diam, facilisis vitae cursus et, laoreet ut sem. Nulla sapien diam, placerat at nibh eget, rhoncus vulputate ante. Curabitur ultricies et magna eu varius.
 </p>
     <p class="closing-paragraph">
-      <a href="#">See all</a>
+      <a href="<?php echo get_post_type_archive_link('bits_article') ?>">See all</a>
     </p>
 
     <h1>Join our events</h1>
@@ -21,7 +21,7 @@ Nulla facilisi. Duis eget quam libero. Sed egestas purus eget vulputate euismod.
     Nulla facilisi. Duis eget quam libero. Sed egestas purus eget vulputate euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis leo sit amet urna euismod, at faucibus sapien laoreet. Cras consectetur sem velit, ut convallis neque vestibulum sit amet. Sed efficitur hendrerit cursus. Vivamus lobortis urna nec nibh consectetur, ut tempor nisi elementum. Ut eget ante quis nisl dictum cursus blandit at dui. Donec lectus diam, facilisis vitae cursus et, laoreet ut sem. Nulla sapien diam, placerat at nibh eget, rhoncus vulputate ante. Curabitur ultricies et magna eu varius.
     </p>
     <p class="closing-paragraph">
-      <a href="#">See all</a>
+      <a href="<?php echo get_post_type_archive_link('bits_event') ?>">See all</a>
     </p>
 
 		</main>
