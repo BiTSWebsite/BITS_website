@@ -20,3 +20,7 @@ function group_events_by_year($events) {
 
     return $events_grouped_by_year;
 }
+
+function upcoming_events($events) {
+    return $events;
+}
