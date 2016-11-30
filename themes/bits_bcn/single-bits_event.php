@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('single-bits_event'); ?>
 
 <?php $event = to_event($post); ?>
 
@@ -21,15 +21,16 @@
 		<h3>Summary:</h3>
 		<?php echo $event->getExcerpt(); ?>
 	  <?php if ($event->hasFeaturedVideo()): ?>
-        <p><iframe src="https://player.vimeo.com/video/<?php echo $event->getFeaturedVideoId() ?>?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+      <div class="videoWrapper">
+				<iframe src="https://player.vimeo.com/video/<?php echo $event->getFeaturedVideoId() ?>?badge=0"
+								width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
     <?php endif ?>
-		<?php if ($event->hasFeaturedImage()): ?>
-			<p>
-				<img src="<?php echo $event->getFeaturedImage(); ?>" alt="Image" />
-			</p>
+		<?php if ($event->hasFeaturedImage() and !$event->hasFeaturedVideo()): ?>
+			<div class="teaser-image show-for-small-only" style="background-image:url(<?php echo $event->getFeaturedImage(); ?>)">
+			</div>
 		<?php endif ?>
-		<?php echo apply_filters('the_content', get_post_field('post_content', $post->ID)); ?>
-
+		<?php echo apply_filters('the_content', $event->getAdditionalInformation()); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 

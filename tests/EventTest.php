@@ -3,7 +3,7 @@
 class EventTest extends PHPUnit_Framework_TestCase {
 
     function testThatDayGetsDisplayedInTheCorrectFormat() {
-        $event = new Event("shiny", date_create("2001-09-02"), "Excerpt", 'permalink', 'Public', '1234567890', '/img/0001.png');
+        $event = new Event("shiny", date_create("2001-09-02"), "Excerpt", 'permalink', 'Public', '1234567890', '/img/0001.png', 'Lorem ipsum...');
 
         $day = $event->getDay();
 
@@ -11,7 +11,7 @@ class EventTest extends PHPUnit_Framework_TestCase {
     }
 
     function testThatCorrectMonthGetsDisplayed() {
-        $event = new Event("shiny", date_create("2001-09-02"), "Excerpt", 'permalink', 'Public', '1234567890', '/img/0001.png');
+        $event = new Event("shiny", date_create("2001-09-02"), "Excerpt", 'permalink', 'Public', '1234567890', '/img/0001.png', 'Lorem ipsum...');
 
         $month = $event->getMonth();
 

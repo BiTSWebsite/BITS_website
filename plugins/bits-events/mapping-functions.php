@@ -11,7 +11,8 @@ if ( ! function_exists( 'to_event' ) ) :
       get_permalink($post),
       $post->__get(BITS_EVENT_LOGISTICS_PREFIX . BITS_EVENT_AUDIENCE),
       $post->__get(BITS_EVENT_FEATURED_CONTENT_PREFIX . BITS_EVENT_FEATURED_VIDEO),
-      $post->__get(BITS_EVENT_FEATURED_CONTENT_PREFIX . BITS_EVENT_FEATURED_IMAGE)
+      $post->__get(BITS_EVENT_FEATURED_CONTENT_PREFIX . BITS_EVENT_FEATURED_IMAGE),
+      $post->post_content
     );
   }
 

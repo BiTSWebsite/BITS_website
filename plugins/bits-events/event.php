@@ -17,8 +17,9 @@ class Event
     var $audience;
     var $featured_video_id;
     var $featured_image;
+    var $additional_information;
 
-    function __construct($title, $date, $excerpt, $permalink, $audience, $video_id, $image)
+    function __construct($title, $date, $excerpt, $permalink, $audience, $video_id, $image, $event_additional_information)
     {
         $this->title = $title;
         $this->date = $date;
@@ -27,6 +28,7 @@ class Event
         $this->audience = $audience;
         $this->featured_video_id = $video_id;
         $this->featured_image = $image;
+        $this->additional_information = $event_additional_information;
     }
 
     function getTitle()
@@ -59,27 +61,38 @@ class Event
         return $this->permalink;
     }
 
-    function getAudience() {
-      return $this->audience;
+    function getAudience()
+    {
+        return $this->audience;
     }
 
-    function hasAudience() {
-      return !empty(trim($this->getAudience()));
+    function hasAudience()
+    {
+        return !empty(trim($this->getAudience()));
     }
 
-    function getFeaturedVideoId() {
-      return $this->featured_video_id;
+    function getFeaturedVideoId()
+    {
+        return $this->featured_video_id;
     }
 
-    function hasFeaturedVideo() {
-      return !empty(trim($this->getFeaturedVideoId()));
+    function hasFeaturedVideo()
+    {
+        return !empty(trim($this->getFeaturedVideoId()));
     }
 
-    function getFeaturedImage() {
-      return $this->featured_image;
+    function getFeaturedImage()
+    {
+        return $this->featured_image;
     }
 
-    function hasFeaturedImage() {
-      return !empty(trim($this->getFeaturedImage()));
+    function hasFeaturedImage()
+    {
+        return !empty(trim($this->getFeaturedImage()));
+    }
+
+    function getAdditionalInformation()
+    {
+        return $this->additional_information;
     }
 }
