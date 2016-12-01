@@ -58,4 +58,14 @@ class EventPresenterTest extends PHPUnit_Framework_TestCase
         $this->assertContains($this->firstEvent, $upcoming_events);
         $this->assertContains($this->secondEvent, $upcoming_events);
     }
+
+    public function testThatEventTodayStillShowsUp() {
+        $today = date_create("1994-01-01");
+        $todayEvent = new Event("Not Fancy", $today, 'excerpt', 'permalink', 'Public', '1234567890', '/img/0001.png', 'Lorem ipsum...');
+
+        $upcoming_events = upcoming_events([$todayEvent], $today);
+
+        $this->assertCount(1, $upcoming_events);
+        $this->assertContains($todayEvent, $upcoming_events);
+    }
 }
