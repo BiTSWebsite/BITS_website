@@ -68,4 +68,13 @@ class EventPresenterTest extends PHPUnit_Framework_TestCase
         $this->assertCount(1, $upcoming_events);
         $this->assertContains($todayEvent, $upcoming_events);
     }
+
+    public function testThatEventsAreSortedAscendingByDate() {
+        $today = date_create("1994-01-01");
+
+        $thirdEvent = new Event("Not Fancy", date_create("1994-01-01"), 'excerpt', 'permalink', 'Public', '1234567890', '/img/0001.png', 'Lorem ipsum...');
+
+        $upcoming_events = upcoming_events([$this->firstEvent, $this->secondEvent, $thirdEvent], $today);
+        $this->assertEquals($upcoming_events, [$thirdEvent, $this->firstEvent, $this->secondEvent]);
+    }
 }
