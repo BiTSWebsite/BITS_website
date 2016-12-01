@@ -36,3 +36,24 @@
     }
   }
 }
+
+.highlighted-text {
+
+  border-top-style: inset;
+  border-bottom-style: inset;
+  border-width: 2px;
+
+  p {
+    font-size: large;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.featured-article {
+
+  p {
+    color: $lightGrey;
+  }
+}

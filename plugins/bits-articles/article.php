@@ -36,6 +36,10 @@ class Article {
     return $this->author;
   }
 
+  function has_author() {
+    return !empty(trim($this->get_author()));
+  }
+
   function is_featured() {
     return $this->is_featured_article;
   }

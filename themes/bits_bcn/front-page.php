@@ -2,47 +2,55 @@
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main front-page" role="main">
-        <h1>Top articles</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor purus lacus, eu pulvinar lectus rutrum
-            sit amet. Nulla fermentum magna vel ipsum venenatis, vitae sodales purus maximus. Phasellus condimentum
-            lacus sed ipsum pulvinar finibus. Fusce euismod dapibus massa, vel aliquam purus consectetur ut. Morbi non
-            tellus ac leo mattis elementum at eget ligula. Nullam pretium mi nec aliquam semper. Donec porttitor enim
-            sit amet tellus elementum, nec condimentum turpis ultricies. Integer at quam augue. Maecenas arcu urna,
-            iaculis quis molestie a, accumsan ac purus.
-        </p>
-        </p>
-        Nulla facilisi. Duis eget quam libero. Sed egestas purus eget vulputate euismod. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Nunc lobortis leo sit amet urna euismod, at faucibus sapien laoreet. Cras
-        consectetur sem velit, ut convallis neque vestibulum sit amet. Sed efficitur hendrerit cursus. Vivamus lobortis
-        urna nec nibh consectetur, ut tempor nisi elementum. Ut eget ante quis nisl dictum cursus blandit at dui. Donec
-        lectus diam, facilisis vitae cursus et, laoreet ut sem. Nulla sapien diam, placerat at nibh eget, rhoncus
-        vulputate ante. Curabitur ultricies et magna eu varius.
-        </p>
-        <p class="closing-paragraph">
-            <a href="<?php echo get_post_type_archive_link('bits_article') ?>">See all</a>
-        </p>
 
-        <h1>Join our events</h1>
-        <?php foreach (upcoming_events(retrieveAllEvents(), date_create()) as $event) { ?>
-            <div class="row">
-                <div class="columns small-12">
-                    <div class="event-date">
-                        <span class="event-day"><?php echo $event->getDay(); ?></span>
-                        <span class="event-month"><?php echo $event->getMonth(); ?></span>
-                    </div>
-                    <div class="event">
-                        <a class="event-title" href="<?php echo $event->getPermalink(); ?>">
-                            <?php echo $event->getTitle(); ?></a>
-                        <p><?php echo $event->getExcerpt(); ?></p>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }; ?>
-        <p class="closing-paragraph">
-            <a href="<?php echo get_post_type_archive_link('bits_event') ?>">See all</a>
+      <h1>Join our events</h1>
+      <?php foreach (upcoming_events(retrieveAllEvents(), date_create()) as $event) { ?>
+          <div class="row">
+              <div class="columns small-12">
+                  <div class="event-date">
+                      <span class="event-day"><?php echo $event->getDay(); ?></span>
+                      <span class="event-month"><?php echo $event->getMonth(); ?></span>
+                  </div>
+                  <div class="event">
+                      <a class="event-title" href="<?php echo $event->getPermalink(); ?>">
+                          <?php echo $event->getTitle(); ?></a>
+                      <p><?php echo $event->getExcerpt(); ?></p>
+                  </div>
+              </div>
+          </div>
+          <?php
+      }; ?>
+      <p class="closing-paragraph">
+          <a href="<?php echo get_post_type_archive_link('bits_event') ?>">See all</a>
+      </p>
+
+      <div class="highlighted-text">
+        <p>
+          BITS estimulará un debate global sobre el significado cambiante de la soberanía tecnológica y explorará las maneras en que diversas formas de soberanía – de la ciudadanía, de las ciudades, de los estados y de las regiones – pueden subsistir dentro de las condiciones globales hoy en día. BITS se centrará en los efectos políticos del cambio tecnológico y explorará de qué manera el crecimiento de las plataformas tecnológicas y la extracción de datos que estas posibilitan ejercen transformaciones sobre gobiernos, la organización del trabajo, la propiedad y el acceso a las necesidades básicas como el agua, la comida, la vivienda y la energía. Esta tarea es especialmente importante teniendo en cuenta la actual reformulación socio-económica en torno al núcleo teórico y práctico de la tecnología digital, con una nueva y poderosa alianza entre las empresas tecnológicas, las finanzas globales y el complejo militar e industrial.
         </p>
+      </div>
+
+      <h1>Top articles</h1>
+      <?php foreach (retrieve_featured_articles() as $featured_article): ?>
+        <div class="featured-article">
+          <div class="row">
+            <div class="columns small-12">
+              <a href="<?php echo get_permalink($featured_article->get_id()); ?>">
+                <?php echo $featured_article->get_title(); ?>
+              </a>
+              <p>
+                Posted on <?php echo date('jS F Y', strtotime($featured_article->get_publish_date())); ?>
+                <?php if ($featured_article->has_author()): ?>
+        					, by <?php echo $featured_article->get_author(); ?>
+        		    <?php endif ?>
+              </p>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+      <p class="closing-paragraph">
+        <a href="<?php echo get_post_type_archive_link('bits_article') ?>">See all</a>
+      </p>
 
     </main>
 </div>

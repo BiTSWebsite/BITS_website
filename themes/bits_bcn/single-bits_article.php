@@ -4,11 +4,12 @@
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+		<a class="navigation-link" href="<?php echo get_post_type_archive_link('bits_article') ?>">Go to Articles</a>
     <div class="titles">
       <h1><?php echo $article->get_title(); ?></h1>
       <p>
 				Posted on <?php echo date('jS F Y', strtotime($article->get_publish_date())); ?>
-				<?php if (!empty(trim($article->get_author()))): ?>
+				<?php if ($article->has_author()): ?>
 					, by <?php echo $article->get_author(); ?>
 		    <?php endif ?>
       </p>
