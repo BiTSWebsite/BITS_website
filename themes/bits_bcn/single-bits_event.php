@@ -8,6 +8,8 @@
 		<div class="titles">
 			<h1><?php echo $event->getTitle(); ?></h1>
 		</div>
+		<div class="social-media"><?php include 'social-media.php'; ?></div>
+		
 		<h3>Date:</h3>
 		<p><?php echo $event->getDate()->format('jS F Y'); ?></p>
 	  <h3>Time:</h3>
