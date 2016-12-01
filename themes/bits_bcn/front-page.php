@@ -24,7 +24,7 @@
         </p>
 
         <h1>Join our events</h1>
-        <?php foreach (upcoming_events(retrieveAllEvents()) as $event) { ?>
+        <?php foreach (upcoming_events(retrieveAllEvents(), date_create()) as $event) { ?>
             <div class="row">
                 <div class="columns small-12">
                     <div class="event-date">

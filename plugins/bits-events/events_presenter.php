@@ -21,6 +21,8 @@ function group_events_by_year($events) {
     return $events_grouped_by_year;
 }
 
-function upcoming_events($events) {
-    return $events;
+function upcoming_events($events, $today) {
+    return array_filter($events, function($event) use (&$today) {
+       return $event->getDate() > $today;
+    });
 }

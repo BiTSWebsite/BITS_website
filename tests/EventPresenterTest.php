@@ -47,4 +47,15 @@ class EventPresenterTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($events_grouped_by_year, ["1994" => [$this->secondEvent, $this->firstEvent, $thirdEvent]]);
     }
+
+    public function testPastEventsAreNotShownWithTheUpcomingEvents() {
+        $thirdEvent = new Event("Not Fancy", date_create("1993-03-01"), 'excerpt', 'permalink', 'Public', '1234567890', '/img/0001.png', 'Lorem ipsum...');
+        $today = date_create("1994-01-01");
+
+        $upcoming_events = upcoming_events([$this->firstEvent, $this->secondEvent, $thirdEvent], $today);
+
+        $this->assertCount(2, $upcoming_events);
+        $this->assertContains($this->firstEvent, $upcoming_events);
+        $this->assertContains($this->secondEvent, $upcoming_events);
+    }
 }
