@@ -2,12 +2,21 @@
     <div class="row">
         <div class="columns small-6 medium-4 large-3">
             <div class="logo-container">
-                <img src="/wp-content/themes/bits_bcn/images/bits-logo-reversal.svg"/>
+                <a href="<?php echo get_site_url(); ?>">
+                    <img src="/wp-content/themes/bits_bcn/images/bits-logo-reversal.svg"/>
+                </a>
             </div>
         </div>
         <div class="columns small-6 medium-8 large-9">
-            <div data-toggle="bits-menu">
+            <div class="hide-for-large" data-toggle="bits-menu">
                 <img class="hamburger" src="/wp-content/themes/bits_bcn/images/menu-button.svg" data-toggle>
+            </div>
+        </div>
+    </div>
+    <div class="row show-for-large">
+        <div class="columns small-12">
+            <div class="bits-menu">
+                <?php wp_nav_menu(array('menu_class' => 'menu-items')); ?>
             </div>
         </div>
     </div>
@@ -27,7 +36,9 @@
         </div>
     </div>
     <div class="row">
-        <?php wp_nav_menu(array('menu_class' => 'menu-items')); ?>
+        <div class="bits-mobile-menu">
+            <?php wp_nav_menu(array('menu_class' => 'menu-items')); ?>
+        </div>
     </div>
 </nav>
 

@@ -1,8 +1,67 @@
 .bits-navigation {
   background-color: $darkGrey;
 
+  .bits-mobile-menu {
+    .menu-items {
+
+      list-style: none;
+      margin: 0;
+
+      ul {
+        list-style: none;
+        margin: 0;
+      }
+
+      li {
+
+        border-bottom: 1px solid $lightGrey;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: $lightGrey;
+        }
+
+        a {
+          color: white;
+          display: block;
+          font-weight: bold;
+          padding: 1rem 1.75rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .bits-menu {
+    ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      li {
+        display: inline-block;
+        margin: 0 2rem 1rem 0;
+
+        a {
+          color: $bitsYellow;
+          font-size: 1.1rem;
+          text-decoration: none;
+
+          &:hover {
+            color: $bitsRed;
+          }
+        }
+      }
+    }
+  }
+
   .logo-container {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0
   }
 
   .hamburger {
@@ -21,38 +80,6 @@
     color: $bitsYellow;
     font-size: 1.25rem;
     margin: 1rem 0.75rem 0 0;
-  }
-
-  .menu-items {
-
-    list-style: none;
-    margin: 0;
-    
-    ul {
-      list-style: none;
-      margin: 0;
-    }
-
-    li {
-
-      border-bottom: 1px solid $lightGrey;
-
-      &:last-of-type {
-        border-bottom: none;
-      }
-
-      &:hover {
-        background-color: $lightGrey;
-      }
-
-      a {
-        color: white;
-        display: block;
-        font-weight: bold;
-        padding: 1rem 1.75rem;
-        text-transform: uppercase;
-      }
-    }
   }
 
   &.reveal {
