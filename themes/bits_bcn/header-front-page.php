@@ -15,7 +15,6 @@
   </head>
   <body>
   <?php include 'navbar.php'; ?>
-
   <?php get_template_part( 'front', 'teaser' ); ?>
-
+  <?php get_template_part( 'desktop', 'menu' ); ?>
   <div class="contents">
