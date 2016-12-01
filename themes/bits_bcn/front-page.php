@@ -2,7 +2,14 @@
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main front-page" role="main">
-
+        <h3 style="text-align:center">Barcelona Initiative for Technological Sovereignty</h3>
+        <hr>
+        <p>
+            Bacon ipsum dolor amet landjaeger ham hock doner leberkas bacon, turkey turducken biltong porchetta salami pig. Drumstick tri-tip sausage landjaeger.
+        </p>
+        <p>
+            Turkey pork doner, drumstick ball tip leberkas porchetta pork loin kevin ground round frankfurter beef ribs tenderloin shoulder fatback.
+        </p>
         <h1>Join our events</h1>
         <?php
         $upcoming_events = upcoming_events(retrieveAllEvents(), date_create());
