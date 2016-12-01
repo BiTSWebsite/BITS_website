@@ -4,6 +4,11 @@
 
 .content-area {
   @extend .medium-12, .large-8, .columns;
+  padding-top: 0;
+
+  @include breakpoint(large) {
+    padding-top: 1rem;
+  }
 }
 
 hr {

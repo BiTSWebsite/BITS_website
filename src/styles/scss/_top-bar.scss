@@ -36,19 +36,24 @@
   }
 
   .bits-menu {
+
+    background-color: $bitsYellow;
+
     ul {
       list-style: none;
-      margin: 0;
+      margin: 0 auto;
+      padding: 0 1rem 1rem 1rem;
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
+      width: $global-width;
 
       li {
         display: inline-block;
-        margin: 0 2rem 1rem 0;
+        margin: 1rem 2rem 0 0;
 
         a {
-          color: $bitsYellow;
+          color: black;
           font-size: 1.1rem;
           text-decoration: none;
 
@@ -61,7 +66,11 @@
   }
 
   .logo-container {
-    padding: 1rem 1rem 1rem 0
+    padding: 1rem 1rem 1rem 0;
+
+    @include breakpoint(large) {
+      padding: 2rem 1rem 2rem 0;
+    }
   }
 
   .hamburger {
@@ -72,7 +81,6 @@
 
     @include breakpoint(medium down) {
       width: 30px;
-
     }
   }
 

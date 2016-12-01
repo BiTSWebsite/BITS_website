@@ -15,6 +15,7 @@
   </head>
   <body>
   <?php include 'navbar.php'; ?>
+  <?php get_template_part( 'desktop', 'menu' ); ?>
   <?php $event = to_event($post); ?>
 
   <?php if ($event->hasFeaturedImage()): ?>

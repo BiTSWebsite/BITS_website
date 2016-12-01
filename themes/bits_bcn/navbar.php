@@ -13,13 +13,6 @@
             </div>
         </div>
     </div>
-    <div class="row show-for-large">
-        <div class="columns small-12">
-            <div class="bits-menu">
-                <?php wp_nav_menu(array('menu_class' => 'menu-items')); ?>
-            </div>
-        </div>
-    </div>
 </nav>
 
 <nav class="bits-navigation full reveal" id="bits-menu" data-reveal>
