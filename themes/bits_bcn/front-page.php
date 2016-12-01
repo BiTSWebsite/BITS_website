@@ -44,6 +44,8 @@
         					, by <?php echo $featured_article->get_author(); ?>
         		    <?php endif ?>
               </p>
+              <?php echo wp_trim_words($featured_article->content, $num_words = 55, $more = null); ?>
+              <a href="<?php echo get_permalink($featured_article->get_id()); ?>">Read more</a>
             </div>
           </div>
         </div>
