@@ -3,7 +3,7 @@
 }
 
 .content-area {
-  @extend .medium-12, .large-8, .columns;
+  @extend .medium-12, .large-12, .columns;
   padding-top: 0;
 
   @include breakpoint(large) {
