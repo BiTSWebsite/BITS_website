@@ -7,11 +7,11 @@
                 <h3 style="text-align:center">Barcelona Initiative for Technological Sovereignty</h3>
                 <hr>
                 <p>
-                    Bacon ipsum dolor amet landjaeger ham hock doner leberkas bacon, turkey turducken biltong porchetta
-                    salami
-                    pig. Drumstick tri-tip sausage landjaeger. Turkey pork doner, drumstick ball tip leberkas porchetta
-                    pork loin kevin ground round frankfurter beef ribs
-                    tenderloin shoulder fatback.
+                    The Barcelona Initiative for Technological Sovereignty (BITS) aims to stimulate a global debate on changes
+                    in the meanings of sovereignty, and to explore the ways in which the various types of sovereignty -of citizens,
+                    cities, nations and regions- match with global technologies. With a strong focus on the political effects of
+                    technological change. BITS will explore how the emergence of technology platforms and data extractivism is transforming
+                    governments, labor, ownership and access to basic concepts of life such as water, food, housing and energy.
                 </p>
             </div>
         </div>
