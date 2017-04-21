@@ -56,7 +56,7 @@
         <hr class="full-width">
         <div class="row">
             <div class="columns small-12">
-                <h1>Top articles</h1>
+                <h1>Top resources</h1>
             </div>
         </div>
         <div class="row">
